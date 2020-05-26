@@ -11,7 +11,15 @@
                     <a href="#" title="Blogger"><span class="nav-icon material-icons">comment</span> Customers <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
                     <ul class="sub-nav">
                         <li><a title="Feed List"> All</a></li>
-                        <li><a title="Post">Add</a></li>
+                        <li><router-link :to="WEBURL.CUSTOMERS" title="All"> All</router-link></li>
+                        <li><router-link :to="WEBURL.ADD_CUSTOMERS" title="All"> Add customer</router-link></li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="#" title="Blogger"><span class="nav-icon material-icons">comment</span> Delivery <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                    <ul class="sub-nav">
+                        <li><router-link :to="WEBURL.DRIVERS" title="Drivers"> Drivers</router-link></li>
+                        <li><router-link :to="WEBURL.VEHICLES" title="Vehicles"> Vehicle/Motorbike</router-link></li>
                     </ul>
                 </li>
             </ul>
@@ -19,10 +27,12 @@
     </aside>
 </template>
 <script>
+import {WEBURL} from "../../../router/web";
 export default {
     name: "SideBar",
     data(){
         return {
+            WEBURL: WEBURL
         }
     },
 }

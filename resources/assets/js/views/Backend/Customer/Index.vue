@@ -44,7 +44,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr :key="'customer_'+index" class="pointer-cursor">
+                            <tr class="pointer-cursor">
                                 <td data-label="Order#">Levy Barasa</td>
                                 <td data-label="Reference">Nairobi Kenya</td>
                                 <td data-label="Date">254700000000</td>
@@ -69,7 +69,7 @@
 import SideBar from "../Partials/SideBar";
 import TopBar from "../Partials/TopBar";
 export default {
-    name: "Show",
+    name: "Index",
     components: {SideBar,TopBar},
     data(){
         return {
