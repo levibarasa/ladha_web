@@ -16,12 +16,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 use Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
 use Symfony\Component\Translation\DataCollectorTranslator;
-use Symfony\Component\VarDumper\Cloner\Data;
 
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
- *
- * @final
  */
 class TranslationDataCollector extends DataCollector implements LateDataCollectorInterface
 {
@@ -39,8 +36,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     {
         $messages = $this->sanitizeCollectedMessages($this->translator->getCollectedMessages());
 
-        $this->data += $this->computeCount($messages);
+        $this->data = $this->computeCount($messages);
         $this->data['messages'] = $messages;
+
+        $this->data['locale'] = $this->translator->getLocale();
+        $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
 
         $this->data = $this->cloneVar($this->data);
     }
@@ -48,10 +48,8 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     /**
      * {@inheritdoc}
      */
-    public function collect(Request $request, Response $response, \Throwable $exception = null)
+    public function collect(Request $request, Response $response, \Exception $exception = null)
     {
-        $this->data['locale'] = $this->translator->getLocale();
-        $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
     }
 
     /**
@@ -63,7 +61,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     }
 
     /**
-     * @return array|Data
+     * @return array
      */
     public function getMessages()
     {
@@ -100,7 +98,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     }
 
     /**
-     * @internal
+     * @internal since Symfony 4.2
      */
     public function getFallbackLocales()
     {
@@ -115,7 +113,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return 'translation';
     }
 
-    private function sanitizeCollectedMessages(array $messages)
+    private function sanitizeCollectedMessages($messages)
     {
         $result = [];
         foreach ($messages as $key => $message) {
@@ -140,7 +138,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $result;
     }
 
-    private function computeCount(array $messages)
+    private function computeCount($messages)
     {
         $count = [
             DataCollectorTranslator::MESSAGE_DEFINED => 0,
@@ -155,7 +153,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $count;
     }
 
-    private function sanitizeString(string $string, int $length = 80)
+    private function sanitizeString($string, $length = 80)
     {
         $string = trim(preg_replace('/\s+/', ' ', $string));
 

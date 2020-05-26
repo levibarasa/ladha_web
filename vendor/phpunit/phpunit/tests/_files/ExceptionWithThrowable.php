@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /*
  * This file is part of PHPUnit.
  *
@@ -9,5 +9,4 @@
  */
 interface ExceptionWithThrowable extends \Throwable
 {
-    public function getAdditionalInformation();
 }

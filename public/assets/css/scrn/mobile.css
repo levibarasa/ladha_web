@@ -1,0 +1,32 @@
+@media only screen and (max-width: 576px) {
+    .o_apps {
+        margin-right: 13px;
+    }
+    .o_app_icon {
+        max-width: 65px;
+    }
+    .mg-top-140{
+        margin-top: 40px;
+    }
+
+    .posleftpane{
+        width: 25%;
+        float: left;
+    }
+    .posrightpane{
+        width: 75%;
+        float: right;
+    }
+    .pos-app-title{
+        font-weight: 600;
+        font-size: 12px;
+        color: #fff!important;
+    }
+    .posleftpane.mh-50{
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+    .posleftpane.body{
+        padding-top: 10px;
+    }
+}

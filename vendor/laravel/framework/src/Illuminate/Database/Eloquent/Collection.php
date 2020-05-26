@@ -2,13 +2,13 @@
 
 namespace Illuminate\Database\Eloquent;
 
-use Illuminate\Contracts\Queue\QueueableCollection;
-use Illuminate\Contracts\Queue\QueueableEntity;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection as BaseCollection;
-use Illuminate\Support\Str;
 use LogicException;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Queue\QueueableEntity;
+use Illuminate\Contracts\Queue\QueueableCollection;
+use Illuminate\Support\Collection as BaseCollection;
 
 class Collection extends BaseCollection implements QueueableCollection
 {
@@ -17,7 +17,7 @@ class Collection extends BaseCollection implements QueueableCollection
      *
      * @param  mixed  $key
      * @param  mixed  $default
-     * @return \Illuminate\Database\Eloquent\Model|static|null
+     * @return \Illuminate\Database\Eloquent\Model|static
      */
     public function find($key, $default = null)
     {
@@ -141,7 +141,7 @@ class Collection extends BaseCollection implements QueueableCollection
      * @param  array  $path
      * @return void
      */
-    protected function loadMissingRelation(self $models, array $path)
+    protected function loadMissingRelation(Collection $models, array $path)
     {
         $relation = array_shift($path);
 
@@ -185,6 +185,19 @@ class Collection extends BaseCollection implements QueueableCollection
             ->each(function ($models, $className) use ($relations) {
                 static::make($models)->load($relations[$className] ?? []);
             });
+
+        return $this;
+    }
+
+    /**
+     * Add an item to the collection.
+     *
+     * @param  mixed  $item
+     * @return $this
+     */
+    public function add($item)
+    {
+        $this->items[] = $item;
 
         return $this;
     }
@@ -315,10 +328,6 @@ class Collection extends BaseCollection implements QueueableCollection
     {
         $intersect = new static;
 
-        if (empty($items)) {
-            return $intersect;
-        }
-
         $dictionary = $this->getDictionary($items);
 
         foreach ($this->items as $item) {
@@ -384,7 +393,7 @@ class Collection extends BaseCollection implements QueueableCollection
      */
     public function makeHidden($attributes)
     {
-        return $this->each->makeHidden($attributes);
+        return $this->each->addHidden($attributes);
     }
 
     /**
@@ -396,17 +405,6 @@ class Collection extends BaseCollection implements QueueableCollection
     public function makeVisible($attributes)
     {
         return $this->each->makeVisible($attributes);
-    }
-
-    /**
-     * Append an attribute across the entire collection.
-     *
-     * @param  array|string  $attributes
-     * @return $this
-     */
-    public function append($attributes)
-    {
-        return $this->each->append($attributes);
     }
 
     /**
@@ -435,7 +433,7 @@ class Collection extends BaseCollection implements QueueableCollection
     /**
      * Get an array with the values of a given key.
      *
-     * @param  string|array  $value
+     * @param  string  $value
      * @param  string|null  $key
      * @return \Illuminate\Support\Collection
      */
@@ -457,7 +455,7 @@ class Collection extends BaseCollection implements QueueableCollection
     /**
      * Zip the collection together with one or more arrays.
      *
-     * @param  mixed  ...$items
+     * @param  mixed ...$items
      * @return \Illuminate\Support\Collection
      */
     public function zip($items)
@@ -500,25 +498,12 @@ class Collection extends BaseCollection implements QueueableCollection
      * Pad collection to the specified length with a value.
      *
      * @param  int  $size
-     * @param  mixed  $value
+     * @param  mixed $value
      * @return \Illuminate\Support\Collection
      */
     public function pad($size, $value)
     {
         return $this->toBase()->pad($size, $value);
-    }
-
-    /**
-     * Get the comparison function to detect duplicates.
-     *
-     * @param  bool  $strict
-     * @return \Closure
-     */
-    protected function duplicateComparator($strict)
-    {
-        return function ($a, $b) {
-            return $a->is($b);
-        };
     }
 
     /**
@@ -568,19 +553,7 @@ class Collection extends BaseCollection implements QueueableCollection
      */
     public function getQueueableRelations()
     {
-        if ($this->isEmpty()) {
-            return [];
-        }
-
-        $relations = $this->map->getQueueableRelations()->all();
-
-        if (count($relations) === 0 || $relations === [[]]) {
-            return [];
-        } elseif (count($relations) === 1) {
-            return $relations[0];
-        } else {
-            return array_intersect(...$relations);
-        }
+        return $this->isNotEmpty() ? $this->first()->getQueueableRelations() : [];
     }
 
     /**

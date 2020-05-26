@@ -1,0 +1,447 @@
+@media only screen and (max-width: 1300px) {
+    .o_apps {
+        margin-right: 40px;
+    }
+    .o_app_icon {
+        max-width: 75px;
+    }
+    .mg-top-140{
+        margin-top: 140px;
+    }
+
+    .posleftpane{
+        width: 35%;
+        float: left;
+    }
+    .posrightpane{
+        width: 65%;
+        float: right;
+    }
+
+    .pos-app-title{
+        font-weight: 800;
+        font-size: 20px;
+        color: #fff!important;
+    }
+    .posleftpane.mh-50{
+        padding-top: 8px;
+        padding-left: 10px;
+    }
+
+    .posleftpane.body{
+        padding: 6px;
+    }
+    .pd-l-resp{ padding-left: 6px!important; }
+    .mg-b-resp { margin-bottom: 8px!important; }
+
+    .cart-item img{
+        max-height: 130px;
+    }
+    .cart-item{
+        max-height: 170px;
+        min-height: 170px;
+    }
+
+    .order .order-empty {
+        text-align: center;
+        margin: 48px;
+        color: #DDD;
+    }
+    .order .order-empty .material-icons {
+        font-size: 54px;
+    }
+    .order .order-empty h1 {
+        font-size: 20px;
+        text-transform: none!important;
+        font-weight: 400;
+    }
+
+    .order-selector{
+        width: 89%; float: left; overflow-x: scroll;
+    }
+    .order-selector button{
+        display: inline;
+    }
+    .current-user{
+        width: 10%;
+        float: right;
+        padding: 15px 10px 5px;
+    }
+    .posrightpane-content {
+        padding: 10px;
+    }
+    .force-to-bottom{
+        position: absolute;
+        bottom: 5px!important;
+        width: 62.5%;
+        float: right;
+    }
+
+    .myButton {
+        box-shadow:inset 0px 1px 0px 0px #ffffff!important;
+        background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%)!important;
+        background-color:#ededed;
+        border-radius:3px!important;
+        border:1px solid #dcdcdc!important;
+        display:inline-block!important;
+        cursor:pointer!important;
+        color:#777777!important;
+        font-size:12px!important;
+        font-weight: 600!important;
+        padding:10px 29px!important;
+        text-decoration:none!important;
+        text-shadow:0px 1px 0px #ffffff!important;
+        width: 35%!important;
+        margin-bottom: 5px;
+    }
+    
+    .myButton2 {
+        box-shadow:inset 0px 1px 0px 0px #ffffff!important;
+        background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%)!important;
+        background-color:#ededed;
+        border-radius:3px!important;
+        border:1px solid #dcdcdc!important;
+        display:inline-block!important;
+        cursor:pointer!important;
+        color:#777777!important;
+        font-size:12px!important;
+        font-weight: 600!important;
+        padding:10px 29px!important;
+        text-decoration:none!important;
+        text-shadow:0px 1px 0px #ffffff!important;
+        width: 70%!important;
+        margin-bottom: 5px;
+    }
+    .myButton.special, .myButton2.special {
+        width: 45px!important;
+        padding:10px 10px!important;
+        font-size:13px!important;
+        color:#444!important;
+    }
+    .myButton.selected-mode {
+        color:#fff!important;
+        /* background:#875a7b!important; */
+        /* box-shadow:inset 0px 1px 0px 0px #875a7b!important; */
+        background: #48a1af!important;
+        box-shadow:inset 0px 0px 0px 0px #48a1af!important;
+    }
+    .myButton:hover, .myButton2:hover {
+        background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+        background-color:#dfdfdf;
+    }
+    .myButton:active, .myButton2:active {
+        position:relative;
+        top:1px;
+    }
+    .myButton.confirm, .myButton2.confirm {
+        width: 45px!important;
+        padding:10px 0!important;
+        font-size:12px!important;
+        color:#fff!important;
+        font-weight: normal!important;
+        background: #6ec89b!important;
+        border: 1px solid #6ec89b!important;
+    }
+
+    .order-panel-content{
+        width: 80%;
+        margin-left: 10%;
+        /* padding: 10px; */
+    }
+    .order-panel-header{
+        padding: 20px 20px 10px 20px;
+    }
+    .order-panel-body{
+        padding: 20px 20px 10px 20px;
+    }
+
+    .home-page-info p{
+        font-size: 15px!important;
+    }
+
+    .pay-card h1{
+        font-weight: 300!important;
+        font-size: 20px!important;
+    }
+
+    .order-panel-payment{
+        padding: 10px 10px 10px 25px!important;
+    }
+
+    .pay-card{
+        margin-top: 10px;
+    }
+
+    .paymentlines-container {
+        padding: 16px;
+        padding-top: 0;
+        border-bottom: dashed 1px gainsboro;
+        min-height: 154px;
+    }
+    .paymentlines-empty .total {
+        text-align: center;
+        padding: 20px 0px 16px;
+        font-size: 60px;
+        color: #d34336;
+        text-shadow: 0px 2px white, 0px 2px 2px rgba(0, 0, 0, 0.27);
+    }
+    .paymentlines-empty .message {
+        text-align: center;
+    }
+
+
+
+.pos .paymentlines {
+    width: 100%!important;
+    border-spacing: 0px 10px;
+    border-collapse: inherit;
+}
+.pos .paymentlines .label > * {
+    font-size: 16px;
+    padding: 8px;
+}
+.pos .paymentlines tbody {
+    background: white;
+    border-radius: 3px;
+}
+.pos .paymentline.selected {
+    font-size: 22px;
+    /* background: #6EC89B; */
+    background: #48a1af;
+    color: white;
+}
+
+.pos .paymentline.selected .edit {
+    background: white;
+    /* color: #6EC89B; */
+    color: #555;
+    outline: 3px blue;
+    /* box-shadow: 0px 0px 0px 3px #6EC89B; */
+    /* box-shadow: 0px 0px 0px 3px #d34336; */
+    box-shadow: 0px 0px 0px 3px #48a1af;
+    position: relative;
+    border-radius: 3px;
+}
+.pos .paymentline .col-due, .pos .paymentline .col-tendered, .pos .paymentline .col-change {
+    min-width: 90px;
+}
+.pos .paymentline .delete-button {
+    cursor: pointer;
+    text-align: center;
+}
+.pos .paymentline > * {
+    padding: 8px 12px;
+}
+table.paymentlines thead{
+    padding-bottom: 0px!important;
+}
+table.paymentlines thead tr th{
+    border: transparent solid 0px!important;
+    padding-bottom: 0px!important;
+    color: #555555;
+    /* font-size: 15px; */
+    font-size: 13px;
+    text-transform: capitalize!important;
+    /* font-family: "Lato","Lucida Grande", Helvetica, Verdana, Arial; */
+}
+table.paymentlines tbody tr td{
+    font-size: 14px!important;
+    font-weight: 600;
+}
+.pos .paymentline.extra .col-due {
+    border-radius: 0 0 6px 6px;
+    border-top: solid 1px rgb(230, 230, 230);
+    font-weight: bold;
+}
+
+    /* .payment-numpad .numpad button:first-child {
+        border-top-left-radius: 4px;
+    }
+    .payment-numpad .numpad button {
+        width: 74px;
+        height: 74px;
+    }
+    .payment-buttons .button .fa {
+        position: absolute;
+        left: 11px;
+        top: 50%;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        margin-top: -25px;
+        vertical-align: middle;
+        border-radius: 26px;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        background: rgba(255,255,255,0.4);
+        font-size: 20px;
+        transition: all 150ms linear;
+    }
+    
+    .payment-numpad .numpad {
+        float: none;
+        border-radius: 4px;
+        border-top: 1px solid;
+        border-left: 1px solid;
+        border-color: #cacaca;
+        overflow: hidden;
+        margin: 0;
+    }
+    .input-button {
+        font-size: 24px;
+    }
+
+    .pos .mode-button.selected-mode {
+        color: white;
+        border-color: transparent;
+        background: #875a7b;
+    }
+
+    .pos .actionpad .button.pay {
+        height: 162px;
+    }
+    .pos .actionpad .button:last-child {
+        border-bottom-left-radius: 4px;
+    } */
+
+    .pos .numpad {
+        display: inline-block;
+        text-align: center;
+        /* width: 216px; */
+        margin: 16px;
+        margin-top: 8px;
+        margin-left: 0px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px solid;
+        border-color: #bfbfbf;
+        border-top-right-radius: 4px;
+    }
+    
+    .pos .numpad button {
+        float: left;
+        height: 54px;
+        width: 54px;
+        font-weight: bold;
+        vertical-align: middle;
+        color: #555555;
+        border-radius: 0;
+        border: none;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        border-color: #bfbfbf;
+        transition: all 150ms linear;
+    }
+    
+    .pos .input-button {
+        font-size: 24px;
+    }
+
+    .pos .payment-buttons {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px;
+        padding-left: 0;
+        float: right;
+    }
+    
+    .payment-buttons .button:first-child {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-top-width: 1px;
+    }
+    
+    .payment-buttons .button {
+        background: #e2e2e2;
+        line-height: 73px;
+        font-size: 16px;
+        padding: 0px 8px;
+        border: solid 1px rgb(200,200,200);
+        border-top-width: 0;
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        transition: background-color, border-color, color 150ms linear;
+    }
+    
+    .payment-buttons .button:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    
+    .payment-buttons .button {
+        background: #e2e2e2;
+        line-height: 73px;
+        font-size: 16px;
+        padding: 0px 8px;
+        border: solid 1px rgb(200,200,200);
+        border-top-width: 0;
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        transition: background-color, border-color, color 150ms linear;
+    }
+    
+    .payment-numpad .numpad button:first-child {
+        border-top-left-radius: 4px;
+    }
+    .payment-numpad .numpad button {
+        width: 74px;
+        height: 74px;
+    }
+    .payment-buttons .button .fa {
+        position: absolute;
+        left: 11px;
+        top: 50%;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        margin-top: -25px;
+        vertical-align: middle;
+        border-radius: 26px;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        background: rgba(255,255,255,0.4);
+        font-size: 20px;
+        transition: all 150ms linear;
+    }
+    
+    .payment-numpad .numpad {
+        float: none;
+        border-radius: 4px;
+        border-top: 1px solid;
+        border-left: 1px solid;
+        border-color: #cacaca;
+        /* width: 296px; */
+        overflow: hidden;
+        margin: 0;
+    }
+    .paymentmethods {
+        margin: 16px;
+    }
+    .paymentmethods .button:first-child {
+        border-top-width: 1px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    
+    .paymentmethods .button {
+        background: #e2e2e2;
+        line-height: 74px;
+        font-size: 16px;
+        border: solid 1px rgb(202, 202, 202);
+        /* border-top-width: 0px; */
+        cursor: pointer;
+        text-align: center;
+    }
+    
+}

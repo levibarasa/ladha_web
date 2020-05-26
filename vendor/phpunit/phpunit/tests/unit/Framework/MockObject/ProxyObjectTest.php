@@ -7,12 +7,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @small
- */
 final class ProxyObjectTest extends TestCase
 {
     public function testProxyingWorksForMethodThatReturnsUndeclaredScalarValue(): void

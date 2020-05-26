@@ -2,16 +2,13 @@
 
 namespace Illuminate\Support\Facades;
 
-use Laravel\Ui\UiServiceProvider;
-use LogicException;
-
 /**
  * @method static mixed guard(string|null $name = null)
  * @method static void shouldUse(string $name);
  * @method static bool check()
  * @method static bool guest()
  * @method static \Illuminate\Contracts\Auth\Authenticatable|null user()
- * @method static int|string|null id()
+ * @method static int|null id()
  * @method static bool validate(array $credentials = [])
  * @method static void setUser(\Illuminate\Contracts\Auth\Authenticatable $user)
  * @method static bool attempt(array $credentials = [], bool $remember = false)
@@ -22,7 +19,7 @@ use LogicException;
  * @method static bool viaRemember()
  * @method static void logout()
  * @method static \Symfony\Component\HttpFoundation\Response|null onceBasic(string $field = 'email',array $extraConditions = [])
- * @method static bool|null logoutOtherDevices(string $password, string $attribute = 'password')
+ * @method static null|bool logoutOtherDevices(string $password, string $attribute = 'password')
  * @method static \Illuminate\Contracts\Auth\UserProvider|null createUserProvider(string $provider = null)
  * @method static \Illuminate\Auth\AuthManager extend(string $driver, \Closure $callback)
  * @method static \Illuminate\Auth\AuthManager provider(string $name, \Closure $callback)
@@ -52,10 +49,6 @@ class Auth extends Facade
      */
     public static function routes(array $options = [])
     {
-        if (! array_key_exists(UiServiceProvider::class, static::$app->getLoadedProviders())) {
-            throw new LogicException('Please install the laravel/ui package in order to use the Auth::routes() method.');
-        }
-
         static::$app->make('router')->auth($options);
     }
 }
