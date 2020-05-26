@@ -18738,9 +18738,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export USER_ACCEPT_INVITATION_URL */
 /* unused harmony export USER_INVITED_LOAD_URL */
 /* unused harmony export PRACTICE_ROLE_URL */
-//export const BASE_URL = "https://docs.envisagemobile.com";
-var BASE_URL = "http://127.0.0.1:10000";
-//http://192.168.10.217:10000/login; 0716 649 562
+var BASE_URL = "https://bidhaatele.com";
 // Comments
 var RTC_BASE_URL = "localhost";
 var RTC_HIS_PORT = "8090";

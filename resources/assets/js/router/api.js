@@ -1,6 +1,4 @@
-//export const BASE_URL = "https://docs.envisagemobile.com";
-export const BASE_URL = "http://127.0.0.1:10000";
-//http://192.168.10.217:10000/login; 0716 649 562
+export const BASE_URL = "https://bidhaatele.com";
 // Comments
 export const RTC_BASE_URL = "localhost";
 export const RTC_HIS_PORT = "8090";
