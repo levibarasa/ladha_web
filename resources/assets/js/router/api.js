@@ -10,5 +10,5 @@ export const CHANGE_PASSWORD = `${BASE_API_URL }/oauth/change/password`;
 export const VALIDATE_TOKEN_API = `${BASE_API_URL }/oauth/validate/token`;
 export const USER_ACCEPT_INVITATION_URL = `${BASE_API_URL }/oauth/invitation`;
 export const USER_INVITED_LOAD_URL = `${BASE_API_URL }/oauth/invitation/users`;
-export const PRACTICE_ROLE_URL = `${BASE_API_URL }/practices/roles`
+export const PRACTICE_ROLE_URL = `${BASE_API_URL }/practices/roles`;
 

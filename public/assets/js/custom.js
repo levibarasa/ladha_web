@@ -1,10 +1,3 @@
-/*!
-  * FreakPixels v1.1.0 (http://freakpixels.com/)
-  * Copyright 2011-2018 The FreakPixels Authors 
-  * Licensed under MIT    
-  */
-
-
 "use strict";
 
 /************************************************
