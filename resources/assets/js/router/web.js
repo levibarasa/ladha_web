@@ -4,3 +4,8 @@ export const LP_LINKS = {
     LOSTPASS: "/forgot/password",
 };
 
+export const WEBURL = {
+    CUSTOMERS: "/customers",
+    SUPPLIERS: "/suppliers",
+};
+
