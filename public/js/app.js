@@ -18743,7 +18743,7 @@ var BASE_URL = "https://bidhaatele.com";
 var RTC_BASE_URL = "localhost";
 var RTC_HIS_PORT = "8090";
 // API url:
-var BASE_API_URL = BASE_URL + '/api';
+var BASE_API_URL = BASE_URL + '/api/v2';
 // Authentication:
 var LOGIN_API = BASE_API_URL + "/oauth/login";
 var CHANGE_PASSWORD = BASE_API_URL + "/oauth/change/password";
