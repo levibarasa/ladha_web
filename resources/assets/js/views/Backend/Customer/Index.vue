@@ -55,7 +55,7 @@
                         <div class="card-body  p-lg-4">
                             <div class="row justify-content-center">
                                 <div class="col-md-12 col-lg-12  mb-12 mb-lg-0 text-center">
-                                    <!-- ---------Loader here-------- -->
+                                    <!-- ---------Loader will be here-------- -->
                                 </div>
                             </div>
                         </div>
