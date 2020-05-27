@@ -12604,6 +12604,11 @@ function applyToTag (styleElement, obj) {
 /* unused harmony export BASE_API_URL */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LOGIN_API; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SUPPLIERS_API; });
+/* unused harmony export CUSTOMERS_API */
+/* unused harmony export PRODUCTS_API */
+/* unused harmony export ORDERS_API */
+/* unused harmony export DRIVERS_API */
+/* unused harmony export VEHICLES_API */
 var BASE_URL = "https://app.virtualglobal.net";
 // Comments
 var RTC_BASE_URL = "localhost";
@@ -12614,6 +12619,11 @@ var BASE_API_URL = BASE_URL + '/api/v2';
 var LOGIN_API = BASE_API_URL + "/oauth/login";
 //
 var SUPPLIERS_API = BASE_API_URL + "/suppliers";
+var CUSTOMERS_API = BASE_API_URL + "/customers";
+var PRODUCTS_API = BASE_API_URL + "/products";
+var ORDERS_API = BASE_API_URL + "/orders";
+var DRIVERS_API = BASE_API_URL + "/deliveries/drivers";
+var VEHICLES_API = BASE_API_URL + "/deliveries/vehicles";
 
 /***/ }),
 /* 20 */
