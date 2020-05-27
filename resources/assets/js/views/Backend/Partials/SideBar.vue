@@ -21,6 +21,26 @@
                         <li><router-link :to="WEBURL.DRIVERS" title="Drivers"> Drivers</router-link></li>
                         <li><router-link :to="WEBURL.VEHICLES" title="Vehicles"> Vehicle/Motorbike</router-link></li>
                     </ul>
+                </li>   
+                <li >
+                    <a href="#" title="Blogger"><span class="nav-icon material-icons">comment</span> Suppliers <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                    <ul class="sub-nav">
+                        <li><router-link :to="WEBURL.SUPPLIERS" title="All"> All</router-link></li>
+                        <li><router-link :to="WEBURL.ADD_SUPPLIERS" title="All"> Add Supplier</router-link></li>
+                    </ul>
+                </li>
+                <li > 
+                    <a href="#" title="Blogger"><span class="nav-icon material-icons">comment</span> Products <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                    <ul class="sub-nav">
+                        <li><router-link :to="WEBURL.PRODUCTS" title="All"> All</router-link></li>
+                        <li><router-link :to="WEBURL.ADD_PRODUCTS" title="All"> Add Product</router-link></li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="#" title="Blogger"><span class="nav-icon material-icons">comment</span> Orders <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+                    <ul class="sub-nav">
+                        <li><router-link :to="WEBURL.ORDERS" title="All"> All</router-link></li> 
+                    </ul>
                 </li>
             </ul>
         </nav>
