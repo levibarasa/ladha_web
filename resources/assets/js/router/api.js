@@ -1,4 +1,5 @@
 export const BASE_URL = "https://app.virtualglobal.net";
+//export const BASE_URL = "http://127.0.0.1:10000";
 // Comments
 export const RTC_BASE_URL = "localhost";
 export const RTC_HIS_PORT = "8090";

@@ -38,16 +38,16 @@
                             <tr>
                                 <th scope="col" class="resizeable">Supplier Name <span class="material-icons align-text-bottom ml-1 md-18">sort</span></th>
                                 <th scope="col" class="resizeable">Address</th>
-                                <th scope="col" class="resizeable">Category</th>
+                                <th scope="col" class="resizeable">Email</th>
                                 <th scope="col" class="resizeable">Mobile <span class="material-icons align-text-bottom ml-1 md-18">sort</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(supplier,index) in suppliers" :key="'suppliers_'+index" class="pointer-cursor">
-                                <td data-label="Order#">Unilever Kenya Limited</td>
-                                <td data-label="Reference">Nairobi Kenya</td>
-                                <td data-label="Date">Manufacturer</td>
-                                <td data-label="Date">254700000000</td>
+                                <td data-label="Order#">{{supplier.name}}</td>
+                                <td data-label="Reference">{{supplier.address}}</td>
+                                <td data-label="Date">{{supplier.email}}</td>
+                                <td data-label="Date">{{supplier.phone}}</td>
                             </tr>
                             <tr v-if="!suppliers.length" class="pointer-cursor">
                                 <td colspan="4" class="text-center" data-label="Order#">No data to show!</td>

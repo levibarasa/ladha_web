@@ -12610,6 +12610,7 @@ function applyToTag (styleElement, obj) {
 /* unused harmony export DRIVERS_API */
 /* unused harmony export VEHICLES_API */
 var BASE_URL = "https://app.virtualglobal.net";
+//export const BASE_URL = "http://127.0.0.1:10000";
 // Comments
 var RTC_BASE_URL = "localhost";
 var RTC_HIS_PORT = "8090";
@@ -20162,21 +20163,21 @@ var render = function() {
                                 _c(
                                   "td",
                                   { attrs: { "data-label": "Order#" } },
-                                  [_vm._v("Unilever Kenya Limited")]
+                                  [_vm._v(_vm._s(supplier.name))]
                                 ),
                                 _vm._v(" "),
                                 _c(
                                   "td",
                                   { attrs: { "data-label": "Reference" } },
-                                  [_vm._v("Nairobi Kenya")]
+                                  [_vm._v(_vm._s(supplier.address))]
                                 ),
                                 _vm._v(" "),
                                 _c("td", { attrs: { "data-label": "Date" } }, [
-                                  _vm._v("Manufacturer")
+                                  _vm._v(_vm._s(supplier.email))
                                 ]),
                                 _vm._v(" "),
                                 _c("td", { attrs: { "data-label": "Date" } }, [
-                                  _vm._v("254700000000")
+                                  _vm._v(_vm._s(supplier.phone))
                                 ])
                               ]
                             )
@@ -20365,7 +20366,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "resizeable", attrs: { scope: "col" } }, [
-          _vm._v("Category")
+          _vm._v("Email")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "resizeable", attrs: { scope: "col" } }, [
