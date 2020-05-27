@@ -5,7 +5,9 @@ export const LP_LINKS = {
 };
 
 export const WEBURL = {
-    CUSTOMERS: "/customers",  
+    DASHBOARD: "/dashboard",
+    CUSTOMERS: "/customers",
+    ADD_CUSTOMER: "/customers/create",
     SUPPLIERS: "/suppliers",
     ADD_SUPPLIERS: "/suppliers/create",
     DRIVERS: "/delivery/drivers",

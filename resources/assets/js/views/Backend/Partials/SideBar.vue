@@ -12,7 +12,7 @@
                     <ul class="sub-nav">
                         <li><a title="Feed List"> All</a></li>
                         <li><router-link :to="WEBURL.CUSTOMERS" title="All"> All</router-link></li>
-                        <li><router-link :to="WEBURL.ADD_CUSTOMERS" title="All"> Add customer</router-link></li>
+                        <li><router-link :to="WEBURL.ADD_CUSTOMER" title="All"> Add customer</router-link></li>
                     </ul>
                 </li>
                 <li >

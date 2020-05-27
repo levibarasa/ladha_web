@@ -2,9 +2,7 @@
 
     <section class="wrapper">
 
-        <side-bar
-            :menu="'Eco'"
-            :submenu="'EcoCustomers'">
+        <side-bar>
         </side-bar>
 
         <div class="content-area">
@@ -45,11 +43,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="pointer-cursor">
+                            <tr v-for="(supplier,index) in suppliers" :key="'suppliers_'+index" class="pointer-cursor">
                                 <td data-label="Order#">Unilever Kenya Limited</td>
                                 <td data-label="Reference">Nairobi Kenya</td>
                                 <td data-label="Date">Manufacturer</td>
                                 <td data-label="Date">254700000000</td>
+                            </tr>
+                            <tr v-if="!suppliers.length" class="pointer-cursor">
+                                <td colspan="4" class="text-center" data-label="Order#">No data to show!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -57,7 +58,7 @@
                         <div class="card-body  p-lg-4">
                             <div class="row justify-content-center">
                                 <div class="col-md-12 col-lg-12  mb-12 mb-lg-0 text-center">
-                                    <!-- ---------Loader here-------- -->
+                                    <data-load/>
                                 </div>
                             </div>
                         </div>
@@ -70,14 +71,33 @@
 <script>
 import SideBar from "../Partials/SideBar";
 import TopBar from "../Partials/TopBar";
+import DataLoad from "../Partials/DataLoad";
+import {SUPPLIERS_API} from "../../../router/api";
+import { get } from '../../../helpers/api';
 export default {
     name: "Index",
-    components: {SideBar,TopBar},
+    components: {SideBar,TopBar,DataLoad},
     data(){
         return {
             suppliers: [],
-            dataReady: true,
+            dataReady: false,
         }
     },
+    created(){
+        this.loadSuppliers();
+    },
+    methods: {
+        loadSuppliers(){
+            get(SUPPLIERS_API)
+            .then((res) => {
+                if(res.data.status_code === 200) {
+                    this.suppliers = res.data.results.data;
+                    this.dataReady = true;
+                }
+            }).catch((err) => {
+                this.dataReady = true;
+            });
+        },
+    }
 }
 </script>

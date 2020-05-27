@@ -40,7 +40,8 @@
     import APP_INFO from "../../helpers/config";
     import {LP_LINKS} from "../../router/web";
     import {LOGIN_API} from "../../router/api";
-    import {DASHBOARDS} from "../../router/web";
+    import {createHtmlErrorString} from "../../helpers/helpermethods";
+    import {WEBURL} from "../../router/web";
     import Logo from "../Partials/Logo";
     export default {
         components: {Logo},
@@ -51,7 +52,7 @@
                 APP_INFO: APP_INFO.APP_INFO,
                 LP_LINKS: LP_LINKS,
                 form: {
-                    email: '',
+                    email: 'sys@bidhaatele.com',
                     password: ''
                 },
             }
@@ -63,30 +64,20 @@
                 post(LOGIN_API, this.form)
                 .then((res) => {
                     if(res.data.status_code === 200) {
-                        //console.info(res.data.results);
-                        if(res.data.results.length===1){
-                            let access_token = res.data.access_token;
-                            let token_type = res.data.token_type;
-                            let expires_at = res.data.expires_at;
-                            let logged_in_account = res.data.results[0];
-                            Auth.set(access_token,token_type,expires_at,null,logged_in_account);
-                            this.$router.push("/");
-                        }else{
-                            this.accounts = res.data.results;
-                        }
-                    }else if(res.data.status_code === 201){
-                        this.form.email = "";
-                        this.form.password = "";
-                        this.sys_construction = true;
-                        this.$awn.warning('System is under maintanance!');
-                        let globalThis = this;
-                        setTimeout( function(){ globalThis.sys_construction = false }, 5000);
+                        this.$awn.success("Welcome back!");
+                        let access_token = res.data.access_token;
+                        let token_type = res.data.token_type;
+                        let expires_at = res.data.expires_at;
+                        Auth.set(access_token,token_type,expires_at,res.data.results);
+                        this.$router.push(WEBURL.DASHBOARD);
+                        this.processing = false;
                     }
                 })
                 .catch((err) => {
                     this.processing = false;
                     if(err.response.status === 422) {
                         this.form.password = "";
+                        this.$awn.warning(createHtmlErrorString(err.response.data.errors));
                     }
                     else{
                         this.processing = false;

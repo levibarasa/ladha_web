@@ -12,7 +12,7 @@
                 <li class="nav-item ml-sm-3 user-logedin dropdown">
                     <a href="#" id="userLogedinDropdown" data-toggle="dropdown" class="nav-link weight-400 dropdown-toggle"><img src="/assets/icons/dashboard/staff1.png" class="mr-2 rounded" width="28">User</a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userLogedinDropdown">
-                        <a class="dropdown-item cursor-pointer">Log Out</a>
+                        <a @click="logout()" class="dropdown-item cursor-pointer">Log Out</a>
                     </div>
                 </li>
             </ul>
@@ -20,11 +20,20 @@
     </header>
 </template>
 <script>
+import Auth from '../../../store/auth';
+import {WEBURL} from '../../../router/web';
+
 export default {
     name: "TopBar",
     data(){
         return {
         }
     },
+    methods: {
+        logout(){
+            Auth.remove();
+            this.$router.push("/");
+        }
+    }
 }
 </script>

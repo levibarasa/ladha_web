@@ -40,12 +40,7 @@ router.beforeEach((to, from, next) => {
 
     if ( requiresGuest ){
         if (Auth.isAuth()) {
-            const url_to = Auth.redirect_route();
-            if (url_to === 'next') {
-                next();
-            } else {
-                next(url_to);
-            }
+            next("/dashboard");
         } else {
             next();
         }
@@ -53,25 +48,10 @@ router.beforeEach((to, from, next) => {
     else if ( authenticatedUser ){
 
         if (Auth.isAuth()) {
-
-            //Requires Access to Users & Roles
-            if(accessToUsers || accessToRoles){
-                if( Auth.hasPermission(ADMIN_PERM.USERS.VIEW) || Auth.hasPermission(ADMIN_PERM.ROLES.VIEW)){ next(); }else{ next('/403'); }
-            }else if( editCompany ){
-                if( Auth.hasPermission(COMPANY_PERM.COMPANY.EDIT)){ next() }else{ next('/403'); }
-            }
-            else{
-                next();
-            }
-
             next();
-
         } else {
-            let entryUrl = to.path;
-            Auth.setEntry(entryUrl);
             next('/login')
         }
-
     }
     else {
         next();
