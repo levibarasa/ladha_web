@@ -13,8 +13,8 @@
                 <div class="row page-tilte align-items-center">
                   <div class="col-md-auto">
                     <a href="#" class="mt-3 d-md-none float-right toggle-controls"><span class="material-icons">keyboard_arrow_down</span></a>
-                    <h1 class="weight-300 h3 title">eCommerce Products </h1>
-                    <p class="text-muted m-0 desc">All Products</p>
+                    <h1 class="weight-300 h3 title">eCommerce Customer Orders </h1>
+                    <p class="text-muted m-0 desc">All Orders</p>
                   </div> 
                   <div class="col controls-wrapper mt-3 mt-md-0 d-none d-md-block ">
                     <div class="controls d-flex justify-content-center justify-content-md-end">
@@ -29,7 +29,6 @@
                                 <a class="dropdown-item" href="#">Export Excel</a>
                             </div>
                         </span>
-                        <button type="button" data-toggle="modal" data-target="#newCustomerModal" class="btn btn-danger">Add Product</button>
                     </div>
                   </div>
                 </div>
@@ -37,19 +36,28 @@
                 <div class="content">
                     <table v-if="dataReady" class="table mb-4 responsive-table table-bordered bg-white">
                         <thead class="thead-light2">
-                            <tr>
-                                <th scope="col" class="resizeable">Product <span class="material-icons align-text-bottom ml-1 md-18">sort</span></th>
-                                <th scope="col" class="resizeable">Category</th>
-                                <th scope="col" class="resizeable">Supplier</th>
-                                <th scope="col" class="resizeable">Description <span class="material-icons align-text-bottom ml-1 md-18">sort</span></th>
+                            <tr>  
+                                <th scope="col" class="resizeable">Order # <span class="material-icons align-text-bottom ml-1 md-18">sort</span></th>
+                                <th scope="col" class="resizeable">Amount</th>
+                                <th scope="col" class="resizeable">Date Placed</th>
+                                <th scope="col" class="resizeable">Payment Status</th>
+                                <th scope="col" class="resizeable">Status <span class="material-icons align-text-bottom ml-1 md-18">sort</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="pointer-cursor">
-                                <td data-label="Order#">BlueBand 1kg</td>
-                                <td data-label="Reference">Foods</td>
-                                <td data-label="Date">Unilever Kenya Limited</td>
-                                <td data-label="Date">BlueBand 1kg</td>
+                                <td data-label="Order#">1</td>
+                                <td data-label="Reference">200</td>
+                                <td data-label="Date">27/05/2020</td>
+                                <td data-label="Date">Pending</td>
+                                <td data-label="Date">Processing</td>
+                            </tr>
+                            <tr class="pointer-cursor">
+                                <td data-label="Order#">2</td>
+                                <td data-label="Reference">1000</td>
+                                <td data-label="Date">27/05/2020</td>
+                                <td data-label="Date">Complete</td>
+                                <td data-label="Date">Complete</td>
                             </tr>
                         </tbody>
                     </table>
@@ -75,7 +83,7 @@ export default {
     components: {SideBar,TopBar},
     data(){
         return {
-            products: [],
+            customers: [],
             dataReady: true,
         }
     },

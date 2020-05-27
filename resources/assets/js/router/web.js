@@ -5,10 +5,14 @@ export const LP_LINKS = {
 };
 
 export const WEBURL = {
-    CUSTOMERS: "/customers",
-    ADD_CUSTOMERS: "/customers/create",
+    CUSTOMERS: "/customers",  
     SUPPLIERS: "/suppliers",
+    ADD_SUPPLIERS: "/suppliers/create",
     DRIVERS: "/delivery/drivers",
     VEHICLES: "/delivery/vehicles",
+    PRODUCTS: "/products", 
+    ADD_PRODUCTS: "/products/create",
+    ORDERS: "/orders",
+    USER_ACTIVITIES: "/users",
 };
 
