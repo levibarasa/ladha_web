@@ -1,39 +1,101 @@
 <template>
-    <header class="header sticky-top">
-        <nav class="navbar navbar-light bg-white px-sm-4 ">
-            <a class="navbar-brand py-2 d-md-none  m-0 material-icons toggle-sidebar" href="#">menu</a>
-            <ul class="navbar-nav flex-row ml-auto">
-                <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Switch Application">
-                    <a data-toggle="modal" data-target="#switchApp" class="nav-link cursor-pointer"><span class="material-icons align-middle">apps</span></a>
-                </li>
-                <li class="nav-item notification">
-                    <a href="#" id="notificationDropdown" data-toggle="dropdown" class="nav-link"><span class="material-icons align-middle">notifications_none</span></a>
-                </li>
-                <li class="nav-item ml-sm-3 user-logedin dropdown">
-                    <a href="#" id="userLogedinDropdown" data-toggle="dropdown" class="nav-link weight-400 dropdown-toggle"><img src="/assets/icons/dashboard/staff1.png" class="mr-2 rounded" width="28">User</a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userLogedinDropdown">
-                        <a @click="logout()" class="dropdown-item cursor-pointer">Log Out</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
+
+  <section class="header-area">
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg"> 
+                <router-link to="/" class="nav-link">
+                  <font-awesome-icon icon="user-plus" />
+                  <img src="assets/images/ladha.png" height="80px" alt="Logo" />
+                </router-link>  
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarEight"
+                aria-controls="navbarEight"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse sub-menu-bar float-right" id="navbarEight">
+                <ul class="navbar-nav ml-auto float-right">
+                  <li class="nav-item active">
+                    <router-link to="/" class="nav-link">
+                  <font-awesome-icon icon="user-plus" />Home
+                </router-link>
+                  </li>
+                  <li class="nav-item ">
+                    <router-link to="/download" class="nav-link">
+                  <font-awesome-icon icon="user-plus" />Download
+                </router-link>
+                  </li>
+                  <li class="nav-item ">
+                    <router-link to="/restaurant" class="nav-link">
+                  <font-awesome-icon icon="user-plus" />Restaurants
+                </router-link>
+                  </li>
+                  
+                  <li class="nav-item"> 
+                    <router-link to="/login" class="nav-link">
+                  <font-awesome-icon icon="user-plus" />Login
+                </router-link>
+                  </li>
+                  <li class="nav-item">
+                    <li class="nav-item"> 
+                    <router-link to="/register" class="nav-link">
+                  <font-awesome-icon icon="user-plus" />SignUp
+                </router-link> 
+                  </li> 
+                </ul>
+              </div>
+
+              <div class="navbar-btn d-none mt-15 d-lg-inline-block">
+                <a class="menu-bar" href="#side-menu-right">
+                  <i class="lni-menu"></i>
+                </a>
+              </div>
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- navbar area -->
+    <Landing/>
+  </section>
+  
 </template>
 <script>
-import Auth from '../../../store/auth';
-import {WEBURL} from '../../../router/web';
+import Auth from "../../../store/auth";
+import { WEBURL } from "../../../router/web";
+import Landing from "./Landing.vue";
 
 export default {
-    name: "TopBar",
-    data(){
-        return {
-        }
-    },
-    methods: {
-        logout(){
-            Auth.remove();
-            this.$router.push("/");
-        }
+  name: "TopBar",
+  components: {
+    Landing
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    logout() {
+      Auth.remove();
+      this.$router.push("/");
     }
-}
+  }
+};
 </script>
+<style scoped> 
+
+</style>

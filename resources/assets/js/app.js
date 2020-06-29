@@ -28,36 +28,7 @@ Vue.use(VueAWN, {
         okLabel: 'OK',
         cancelLabel: 'Close',
     }
-});
-
-router.beforeEach((to, from, next) => {
-
-    const authenticatedUser = to.matched.some(record => record.meta.authenticatedUser);
-    const requiresGuest = to.matched.some(record => record.meta.requiresGuest);
-    const accessToUsers = to.matched.some(record => record.meta.accessToUsers);
-    const accessToRoles = to.matched.some(record => record.meta.accessToRoles);
-    const editCompany = to.matched.some(record => record.meta.editCompany);
-
-    if ( requiresGuest ){
-        if (Auth.isAuth()) {
-            next("/dashboard");
-        } else {
-            next();
-        }
-    }
-    else if ( authenticatedUser ){
-
-        if (Auth.isAuth()) {
-            next();
-        } else {
-            next('/login')
-        }
-    }
-    else {
-        next();
-    }
-
-});
+}); 
 
 const app = new Vue({
     el: '#root',

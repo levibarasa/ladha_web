@@ -8,22 +8,7 @@
     import Config from './config/config'
     export default {
         created() {
-            // global error http handler
-            interceptors((err) => {
-                if(err.response.status === 401) {
-                    Auth.remove();
-                    this.$router.push('/login')
-                }
-
-                if(err.response.status === 500) {
-                    Flash.setError(err.response.statusText)
-                }
-
-                if(err.response.status === 404) {
-                    this.$router.push('/not-found')
-                }
-            })
-            Auth.initialize()
+            this.$router.push('/') 
         },
         data() {
             return {
@@ -40,7 +25,7 @@
                 return false
             },
             guest() {
-                return !this.auth
+                return this.auth
             }
         },
         methods: {

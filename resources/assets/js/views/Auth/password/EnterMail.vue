@@ -139,6 +139,10 @@
 </template>
 
 <script type="text/javascript">
+    import Header from "../Backend/Partials/Header";
+    import SideBar from "../Backend/Partials/SideBar"; 
+    import DataLoad from "../Backend/Partials/DataLoad";
+    import Footer from "../Front/partials/Footer";
     import Config from '../../../config/config'
     import Auth from '../../../store/auth'
     import { post,get } from '../../../helpers/api'
@@ -150,6 +154,7 @@
         components: {
             PageHeader,
             PageFooter,
+            DataLoad,SideBar,Header,Footer
         },
         data() {
             return {

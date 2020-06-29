@@ -1,17 +1,22 @@
-<template>
-    <section class="wrapper">
-        <div class="login">
-            <div class="image-placeholder">
-                <h1>{{APP_INFO.NAME}}</h1>
-            </div>
-            <div class="form">
-                <logo/>
-                <h3 class="h4 mb-5 text-center">Admin Login</h3>
-                <form @submit.prevent="login()">
-                    <div v-if="login_err" class="alert alert-danger border-radius-zero fs-13">
-                        {{login_err}}
-                    </div>
-                    <div class="form-group">
+<template> 
+<div>
+  <Header></Header> 
+<section class="header-area"> 
+    <!-- navbar area -->
+    <div class="component pb-4">
+        
+        <div class="container" style='background-image: url("assets/images/"); background-size: cover; width: 100%;'>
+            <div class="row" style="margin-top: 80px;height: 500px; ">
+                <div class="col-md-6 col-sm-12 col-xs-12 offset-md-2">
+                    
+    <form @submit.prevent="login()">
+        <br/>
+        <h5 class="text-center p-4"> Login</h5>
+        <div v-if="login_err" class="alert alert-danger border-radius-zero fs-13">
+             {{login_err}}
+         </div>
+        <!-- Name --> 
+         <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" :disabled="processing" v-model="form.email" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
@@ -22,19 +27,29 @@
                     <div class="form-group form-check">
                         <input type="checkbox" :disabled="processing" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                        <router-link :to="LP_LINKS.LOSTPASS" class="float-right">Password ?</router-link>
+                        <router-link :to="LP_LINKS.LOGIN_URL" class="float-right">Password ?</router-link>
                     </div>
                     <button :disabled="processing" type="submit" class="btn mt-4 btn-primary btn-primary-lp btn-block">
                         <span class="fa fa-ban" v-if="processing">Please wait...</span>
                         <span v-else>Login</span>
                     </button>
-                </form>
+          <br/><br/><br/><br/><br/><br/>
+    </form> 
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+  </section>
+    <SideBar></SideBar>
+    <Footer></Footer>
+</div>
 </template>
 
 <script type="text/javascript">
+    import Header from "../Backend/Partials/Header";
+    import SideBar from "../Backend/Partials/SideBar"; 
+    import DataLoad from "../Backend/Partials/DataLoad";
+    import Footer from "../Front/partials/Footer"; 
     import Auth from '../../store/auth';
     import { post, get } from '../../helpers/api';
     import APP_INFO from "../../helpers/config";
@@ -43,8 +58,8 @@
     import {createHtmlErrorString} from "../../helpers/helpermethods";
     import {WEBURL} from "../../router/web";
     import Logo from "../Partials/Logo";
-    export default {
-        components: {Logo},
+    export default {  
+        components: {Logo,DataLoad,SideBar,Header,Footer},
         data() {
             return {
                 processing: false,
@@ -52,7 +67,7 @@
                 APP_INFO: APP_INFO.APP_INFO,
                 LP_LINKS: LP_LINKS,
                 form: {
-                    email: 'sys@bidhaatele.com',
+                    email: '',
                     password: ''
                 },
             }

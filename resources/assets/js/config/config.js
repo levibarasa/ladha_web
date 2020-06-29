@@ -18,6 +18,6 @@ export default {
     //     app_address: "KMA Center, Mara Road PO. BOX 55690-00200",
     // },
     APP_INFO: {
-        NAME: "e-Retailer",
+        NAME: "Ladha",
     }
 }

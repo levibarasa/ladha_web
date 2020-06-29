@@ -1,15 +1,16 @@
 <template>
 
-    <div class="solid fplain">
-        <page-header></page-header>
-        <!--BODY-->
-        <div class="pp-body dsh">
-            <section class="pp-loginblock">
-                <div class="row">
-                    <div class="column medium-12 large-10 large-offset-1">
-                        <div id="main" class="boxgrad">
-                            <div id="pp-main" class="tabs-panel is-active" aria-hidden="false">
-                                <div class="row">
+    <div>
+  <Header></Header> 
+<section class="header-area"> 
+    <!-- navbar area -->
+    <div class="component pb-4">
+        
+        <div class="container">
+            <div class="row" style="margin-top: 80px;">
+                <div class="col-md-6 col-sm-12 col-xs-12 offset-md-2">
+                    
+    <div class="row">
                                     <div class="column medium-7 lleft">
                                         <fieldset>
                                             <h1>Reset Password</h1>
@@ -36,7 +37,7 @@
                                                     </label>
                                                     <div class="controls input-group">
                                                         <span class="input-group-label"><i class="pe-7s-lock"></i></span>
-                                                        <input required v-model="form.password_confirmation" required class="input-block-level input-large input-group-field" data-val="true" data-val-required="The Password field is required." id="Password" type="password" />
+                                                        <input required v-model="form.password_confirmation"  class="input-block-level input-large input-group-field" data-val="true" data-val-required="The Password field is required." id="Password" type="password" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -71,23 +72,22 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section>
+            </div>
         </div>
-        <!--END BODY-->
-
-        <!--FOOTER-->
-        <page-footer></page-footer>
-        <!--END FOOTER-->
-
     </div>
+  </section>
+    <SideBar></SideBar>
+    <Footer></Footer>
+</div>
 
 </template>
 
 <script type="text/javascript">
+    import Header from "../Backend/Partials/Header";
+    import SideBar from "../Backend/Partials/SideBar"; 
+    import DataLoad from "../Backend/Partials/DataLoad";
+    import Footer from "../Front/partials/Footer";
     import Config from '../../../config/config'
     import Auth from '../../../store/auth'
     import { post,get } from '../../../helpers/api'
@@ -98,7 +98,7 @@
     export default {
         components: {
             PageHeader,
-            PageFooter
+            PageFooter,DataLoad,SideBar,Header,Footer
         },
         data() {
             return {

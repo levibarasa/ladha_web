@@ -1,36 +1,29 @@
 <template>
-    <footer class="footer pb-5 bg-navy pt-5">
-        <div class="container flex-grow-1">
-            <div class="row">
-                <div class="col-md">
-                    <h6 class="weight-600 text-white mb-3">Solutions</h6>
-                    <ul class="list-unstyled">
-                        <li><router-link :to="LP_LINKS.E_RETAIL_COMMERCE" class="text-muted">E-Commerce</router-link></li>
-                        <li><router-link :to="LP_LINKS.E_RETAIL_POS" class="text-muted">Point of Sale</router-link></li>
-                    </ul>
-                </div>
-                <div class="col-md">
-                    <h6 class="weight-600 text-white mb-3">Industries</h6>
-                    <ul class="list-unstyled">
-                        <li><router-link :to="LP_LINKS.RETAIL" class="text-muted">Retail</router-link></li>
-                    </ul>
-                </div>
-                <div class="col-md">
-                    <h6 class="weight-600 text-white mb-3">Learn</h6>
-                    <ul class="list-unstyled">
-                        <li><router-link :to="LP_LINKS.ABOUT" class="text-muted">About</router-link></li>
-                    </ul>
-                </div>
-                <div class="col-md">
-                    <ul class="list-unstyled">
-                        <li><router-link :to="LP_LINKS.HOME" class="text-muted">{{APP_INFO.NAME}}</router-link></li>
-                        <li><a :href="'mailto:'+APP_INFO.EMAIL" class="text-muted">{{APP_INFO.EMAIL}}</a></li>
-                        <li><a class="text-muted">address : {{APP_INFO.ADDRESS}}</a></li>
-                        <li><a :href="APP_INFO.MOBILE" class="text-muted">{{APP_INFO.MOBILE}}</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <footer id="footer" class="footer-area" style="position: relative; left: 0; bottom: 0; width: 100%; height: 150 px; "> 
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="copyright text-center text-lg-left mt-10">
+                            <p class="text">Powered by <a style="color: #38f9d7" rel="nofollow" href="https://virtualglobal.net">Virtual Global</a> </p>
+                        </div> <!--  copyright -->
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-logo text-center mt-10"> 
+                            <a class="page-scroll" href="#about">About Ladha</a>
+                        </div> <!-- footer logo -->
+                    </div>
+                    <div class="col-lg-5">
+                        <ul class="social text-center text-lg-right mt-10">
+                            <li><a href="https://facebook.com"><i class="lni-facebook-filled"></i></a></li>
+                            <li><a href="https://twitter.com"><i class="lni-twitter-original"></i></a></li>
+                            <li><a href="https://instagram.com"><i class="lni-instagram-original"></i></a></li>
+                            <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                        </ul> <!-- social -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer copyright -->
     </footer>
 </template>
 <script>
