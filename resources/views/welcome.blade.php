@@ -91,6 +91,7 @@
     <script src="{{URL::asset('assets/js/main.js')}}"></script>
     
     <!-- mix.js('resources/assets/js/app.js', 'public/js') -->
-        <script type="text/javascript" src="{{ mix('/js/app.js') }}"></script>
+    <script src="{{ asset( mix('js/app.js')) }}" type="text/javascript"></script>
+        <!-- <script type="text/javascript" src="{{ mix('/js/app.js') }}"></script> -->
     </body>
 </html>
