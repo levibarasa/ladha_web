@@ -7,7 +7,7 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg"> 
                 <router-link to="/" class="nav-link">
-                  <font-awesome-icon icon="user-plus" />
+                  <font-awesome-icon icon="user-plus" />  
                   <img src="assets/images/ladha.png" height="80px" alt="Logo" />
                 </router-link>  
 
@@ -75,7 +75,7 @@
   </section>
   
 </template>
-<script>
+<script> 
 import Auth from "../../../store/auth";
 import { WEBURL } from "../../../router/web";
 import Landing from "./Landing.vue";

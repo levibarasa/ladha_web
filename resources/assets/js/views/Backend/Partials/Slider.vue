@@ -14,8 +14,8 @@ export default {
   name: "Slider",
   data() {
     return {//1.jpg ,3.jpg ,10.jpg ,6.jpg ,7.jpg ,8.jpg ,9.png
-      images: [
-        "assets/images/1.jpg",
+      images: [ 
+        "require('./assets/images/1.jpg')",
         "assets/images/3.jpg",
         "assets/images/6.jpg",
         "assets/images/7.jpg",
