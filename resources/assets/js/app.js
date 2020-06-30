@@ -29,7 +29,7 @@ Vue.use(VueAWN, {
         cancelLabel: 'Close',
     }
 }); 
-
+//Vue.config.devtools = false
 const app = new Vue({
     el: '#root',
     template: `<app></app>`,
